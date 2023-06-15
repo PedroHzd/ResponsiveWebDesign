@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- 
+  All pages should begin with <!DOCTYPE html>. 
+  This special string is known as a declaration and ensures the browser trie to meet industry-wide specifications. 
+ -->
+<html lang="en">
+<!--
+  All other elements must be descedants of this html element. 
+  
+  lang="en" attribute with the value en specifies that the language of the page is English. 
+ -->
+    <head>
+        <!-- You can set browser behavior by adding self-closing meta elements in the head.-->
+        <meta charset="UTF-8"> <!-- This meta element tells to browser to parse the markup in multiple languages-->
+        <title>CatPhotoApp</title> <!--The title element determines what browsers show in the title bar or tab for the page.-->
+    </head>
+    <body>
+    <!--
+      All page content elements that should be rendered to the page go inside the body element. 
+      However, other important information goes inside the head element.
+     -->
+        <main> <!-- HTML5 has some elements that identify different content areas. These elements make your HTML easier to read and help with Search Engine Optimization (SEO) and accessibility. -->
+
+          <h1>CatPhotoApp</h1> <!-- HTML elemnts have opening / closing tags. The text for an element goes between its tags -->
+
+          <section> <!-- <section></section> element is used to separate content-->
+            <h2>Cat Photos</h2>
+            <!--The h1 through h6 heading elements are used to signify the importance of content below them.
+                The lower the number, the higher the importance, so h2 elements have less importance than h1 elements. 
+                Only use one h1 element per page and place lower importance headings below higher importance headings. 
+             -->
+            <p>See more <a target="_blank" href="https://freecatphotoapp.com">cat photos</a> in our gallery.</p> 
+            <!--<p></p> element is used to create a paragraph of text on websites.
+              
+                <a></a> You can link to another page with the anchor <a></a> element. A link's text must be placed between the 
+                opening and closing tags of an anchor (a) element. <a href="URL">hyperLink text</a> 
+                The a anchor can be used inside a text, images, or any other element. 
+
+                target="" The target attribute with the value _blank in the anchor <a></a> element opens the link in a new tab.
+            -->
+            <a href="https://freecatphotoapp.com"><img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/relaxing-cat.jpg" alt="A cute orange cat lying on its back."></a>
+            <!--<img> You can add images to your website by using the img element. <img> elements have an opening tag without a closing tag. 
+                A tag for an element without a closing tag is known as a self-closing tag.
+
+                The src="URL" attribute in an img element specifies the image's URL (where the image is located).
+
+                alt="" All img elements should have an alt attribute. The alt attribute's text is used for screen 
+                readers to improve accessibility and is displayed if the imgae fails to load. Example: alt="description of pictire"
+            -->
+          </section>
+
+          <section>
+            <h2>Cat Lists</h2> <!-- When you add a lower rank heading element to the page, it's implied that you're starting a new subsection.-->
+            <h3>Things cats love:</h3>
+
+            <ul> <!--short for unordered list <ul></ul>-->
+              <li>cat nip</li> <!--list items <li></li> elements are used to create items in a list. They are nested inside <ul></ul> elements-->
+              <li>laser pointers</li>
+              <li>lasagna</li>
+            </ul>
+
+            <figure> <!--The figure element represents self-contained content and will allow you to associate an image with a caption.-->
+              <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/lasagna.jpg" alt="A slice of lasagna on a plate.">
+              <figcaption>Cats <em>love</em> lasagna.</figcaption> 
+              <!--<figcaption></figcaption> A figure caption <figcaption></figcaption> element is used to add a caption to describe
+                  the image contained within the figure element. 
+
+                  <em></em> You can emphasize a word by wrapping it in <em></em> element.
+              -->
+            </figure>
+
+            <h3>Top 3 things cats hate:</h3>
+
+            <ol> <!--short for ordered list <ol></ol>. The list items nested inside are numbered when displayed.-->
+              <li>flea treatment</li>
+              <li>thunder</li>
+              <li>other cats</li>
+            </ol>
+
+            <figure>
+              <img src="https://cdn.freecodecamp.org/curriculum/cat-photo-app/cats.jpg" alt="Five cats looking around a field.">
+              <figcaption>Cats <strong>hate</strong> other cats.</figcaption>  
+              <!--The strong <strong></strong> element is used to indicate that some text is of strong importance or urgent.-->
+            </figure>
+          </section>
+
+          <section>
+            <h2>Cat Form</h2>
+
+            <form action="https://freecatphotoapp.com/submit-cat-photo">
+            <!--The action attribute indicates where form data should be sent.
+                Ex. <form action="/submit-url"></form> tells the browser that the form data should be sent to the path /submit-url
+            -->
+              <fieldset>
+              <!--<fieldset></fieldset> elements are used to group related input and labels together in a web form. 
+                  fieldset elements are block-level, meaning that they appear on a new line. 
+              -->
+                <legend>Is your cat an indoor or outdoor cat?</legend>
+                <!--<legend></legend> element acts as a caption for the content in the fieldset element.
+                    It gives users context about what they should enter in that part of the form.
+                -->
+                <label><input id="indoor" type="radio" name="indoor-outdoor" value="indoor" checked> Indoor</label>
+                <!--<label></label> elements are used to help associate the text (inside the input element) with the input element.
+                    Especially for assistive technologies like screen readers.
+                    Ex. <label><input> Outdoor</label> makes it so clicking the word Outdoor also selects the corresponding radio button.
+
+                    The input <input> element allows you several ways to collect data from a web form. self-closing
+                  
+                    id="" attribute is used to identify specific HTML elements. Each id attribute's value must be unique from
+                    all other id values for the entire page. 
+
+                    type="radio" You can use radio buttons for questions where you want only one answer out of multiple options. 
+                    
+                    name="" Having the same value for the name attribute on the input elements prevents from choosing both of them.
+                    Making it so selecting one radio button automatically deselects the other radio button. 
+                    Without have the same name attribute, both radio buttons can be selected at the same time. 
+
+                    value="" When you submit the form, the data from the button is based on its name and value attributes.
+                    If you don't include a value attribute, the form data will include indoor-outdoor=on
+                    (the value for the name attribute), which is not very useful when you have multiple buttons.
+                    indoor-outdoor=on doesn't make it clear which button the user submited. It could of been either Indoor or Outdoor. 
+
+                    checked is an attribute with no value. It makes a checkbox or radio button be selected by default. Just add 
+                    the attribute making sure theres space between other attributes. 
+                -->
+                <label><input id="outdoor" type="radio" name="indoor-outdoor" value="outdoor"> Outdoor</label>
+              </fieldset>
+
+              <fieldset>
+                <legend>What's your cat's personality?</legend>
+                <input id="loving" type="checkbox" name="personality" value="loving" checked> <label for="loving">Loving</label> <!--** The order of attributes DOES NOT matter **-->
+                <!--type="checkbox" are commonly used in questions that may have more than one answer.
+                  
+                    value="" Like radio buttons, form data for selected checkboxes are name/value attribute pairs. While the value attribute is
+                    optional, it's best practice to include it with any checkboxes or radio buttons on the page. 
+                    While you won't notice this in the browser, doing this makes it easier for a server to process your web form, 
+                    especially when there are multiple checkboxes. 
+
+                    for="" There's another way to associate an input element's text with the element itself. You can nest the text
+                    within a label element and add a for attribute with the same value as the input element's id attribute. 
+                -->
+                <input id="lazy" type="checkbox" name="personality" value="lazy"> <label for="lazy">Lazy</label>
+                <input id="energetic" type="checkbox" name="personality" value="energetic"> <label for="energetic">Energetic</label>
+              </fieldset>
+
+              <input type="text" name="catphotourl" placeholder="cat photo URL" required>
+              <!--type="" There are many kinds of inputs you can create using the type attribute.
+                  You can easily create a password field, reset button, or a control to let users select a file from their computer. 
+
+                  name="" In order for a form's data to be accessed by the location specified in the action attribute, you must 
+                  give the text field a name attribute and assign it a value to represent the data being submitted. 
+
+                  placeholder="" Placeholder text is used to give people a hint about what kind of information to enter in an input.
+
+                  required -- To prevent a user from submitting your form when required information is missing, you need to add the 
+                  required attribute to an input element. There's no need to set a value to the required attribute. Just add the word
+                  and make sure theres space between other attributes.
+                -->
+              <button type="submit">Submit</button>
+              <!--<button></button> Use the button element to create a clickable button. 
+                  The default behaviour of clicking a form button without any attributes submits the form to the location specified in
+                  the form's action attribute. 
+                  
+                  type="submit" However, relying on default behavior may cause confusion. This attribute with a value of submit 
+                  makes it clear that it's a submit button. 
+
+                  <input> and <button></button> elements are inline elements, which don't appear on new lines but rather next to each other.
+              -->
+            </form>
+          </section>
+        </main>
+
+        <footer>
+          <p>
+            No Copyright - <a href="https://www.freecodecamp.org">freeCodeCamp.org</a>
+          </p>
+        </footer>
+
+      </body>
+</html>
+
+<!--(definition of attribute) HTML attributes are special words used inside the opening tag of an element to control the element's behavior. -->

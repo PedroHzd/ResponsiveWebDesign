@@ -1,0 +1,140 @@
+/* You can add style to an element by setting a property for it like this:
+    element {
+        cssProperty: value;
+    }
+    This is called a type selectors.
+*/
+body {
+    background-image: url(https://cdn.freecodecamp.org/curriculum/css-cafe/beans.jpg);
+    font-family: sans-serif; 
+    padding: 20px;
+    /*You can add a fallback value for the font-family by adding another font name seprarated by a comma.
+        Fallabacks are used in instances where the initial is not found/available. 
+    */
+}
+/*The CSS type selector matches elements by node name.
+    It selects all elements of the give type within a document. 
+*/
+h1 {
+    font-size: 40px;
+    margin-top: 0px;
+    /* h1 elements have a default top margin. Setting the margin to 0px make it look more uniform */
+    margin-bottom: 15px;
+}
+  
+h2 {
+    font-size: 30px;
+}
+/*.established is a class selector use to target an element with a specific class attribute. */
+.established {
+    font-style: italic;
+}
+/* You can add the same group of styles to many elements by creating 
+    a list of selectors. Each selctor is reparated with commas.
+*/
+h1, h2, p {
+    text-align: center;
+}
+/*margin: auto; This is used to center the element horizontally. 
+    You can do this by setting its left and right margins properties 
+    to auto.  
+*/
+.menu {
+    width: 80%;
+    background-color: burlywood;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 20px;
+    max-width: 500px;
+}
+
+img {
+    /*Images are not centered by default. img elements are "like" inline elemenets.
+        To make the image behave like heading elements (which are block-level), and 
+        set the approriate margins to align the image. 
+    */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -25px;
+    /*The space between the image and h2 elements is too big. You could change the margins for 
+        the h2 elements. A much simple approach is the add a negative top margin the img elements.
+    */
+}
+
+hr {
+    height: 2px;
+    background-color: brown;
+    border-color: brown;
+}
+  
+.bottom-line {
+    margin-top: 25px;
+}
+  
+h1, h2 {
+    font-family: Impact, serif;
+}
+/*This css selector targets all the p elements inside the element who's
+    class attribute is item.
+*/
+.item p {
+    display: inline-block; /*inline-block elements only take up the width of their content.*/
+    margin-top: 5px;
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+/*You can chain styles by adding a comma. Now the css styles will apply to both class attributes. */
+.flavor, .dessert {
+    text-align: left;
+    width: 75%;
+}
+/*Note on why the width on flavor and price is 75% and 25%.
+    If you make the width of the page smaller, you will notice at some point, 
+    some of the text on the left starts wrapping around to the next line. 
+    This is because the width of the p element on the left can only take up 
+    50% of the space. 
+    Since the flavor takes up more space, allocate it a bigger margin to
+    prevent the text from wrapping to the next line. 
+*/
+.price {
+    text-align: right;
+    width: 25%;
+}
+  
+/* FOOTER */
+  
+footer {
+    font-size: 14px;
+}
+  
+.address {
+    margin-bottom: 5px;
+}
+/*The default color of a link that has not yet been clicked on is typically blue. 
+    The default color of a link that has already been visited from a page is 
+    typically purple. 
+
+    Use the property color to change this behaviour. 
+*/
+a {
+    color: black;
+}
+/*You change properties of a link when the link has actually been visited by using a pseudo-selector. */
+a:visited {
+    color: black;
+}
+/*This pseudo-selector changes color when a user hover their curser on the link */
+a:hover {
+    color: brown;
+}
+/*Changes the color when the user clicks the link. Uses another pseudo-selector */
+a:active {
+    color: brown;
+}
+
+/* css properties that are new to me
+
+background-image: url(link);
+
+*/

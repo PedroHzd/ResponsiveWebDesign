@@ -1,0 +1,221 @@
+body {
+    background-color: rgb(9, 9, 27)
+}
+/*One way to add color to an element is to use a color keyword like black, cyan, or yellow.
+    If a div element doesn't have any content, the default height of the div is 0px.
+*/
+h1 {
+    text-align: center;
+    color: white;
+}
+
+.container {
+    background-color: rgb(255, 255, 255);
+    padding: 10px 0px;
+    width: 300px;
+    margin: auto;
+}
+
+.marker {
+    width: 200px;
+    height: 25px;
+    margin: 10px auto;
+}
+
+.cap {
+    width: 60px;
+    height: 25px;
+}
+
+.sleeve {
+    width: 110px;
+    height: 25px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-left: 10px double rgba(0, 0, 0, 0.75);
+    /*All HTML elements have borders, though they're usually set to none by default. 
+      With CSS, you can control all aspects fo an element's border, and set the border
+      on all sides, or just one side at a time.
+
+      w3schools has a great resource for this
+      https://www.w3schools.com/css/css_border.asp
+    */
+}
+
+.cap, .sleeve {
+    display: inline-block; 
+    /*Default is block. If next to each other, block elements stack o ntop of each other. 
+      Set the display property to inline-block to change this behavior. 
+    */
+}
+
+.red {
+    
+    background: linear-gradient(rgb(122, 74, 14), rgb(245, 62, 113), rgb(162, 27, 27));
+    box-shadow: 0 0 20px 0 #3B7E20CC;
+}
+
+.green {
+    background: linear-gradient(#55680D, #71F53E, #116C31); /*Hex value*/
+    box-shadow: 0 0 20px 0 rgba(83, 14, 14, 0.8);
+}
+
+.blue {
+    background: linear-gradient(hsl(186, 76%, 16%), hsl(223, 90%, 60%), hsl(240, 56%, 42%)); /*hsl color*/
+    box-shadow: 0 0 20px 0 hsla(223, 59%, 31% 0.8);
+}
+
+/* Margins and Padding have shorthand properties 
+
+Individual Sides                            If the property has 4 values - padding: 25px 50px 75px 100px;
+    padding/margin-top:                         top - 25px
+    padding/margin-right:                       right - 50px
+    padding/margin-bottom:                      bottom - 75px
+    padding/margin-left:                        left - 100px (basically clock-wise rotation)
+
+for 3 values - margin: 25px 50px 75px;      for 3 values - margin: 25px 50px;
+    top - 25px                                  top and bottom - 25px
+    right and left - 50px                       right and left - 50px
+    bottom - 75px
+
+for a single value - padding: 25px;
+    all four properties are 25px
+*/
+
+/*There are two main color models: the additive RGB (red, green, blue) and subtractive CMYK (cyan, magneta, yellow, black)
+    rbg model is used in electronics and the cmyk model used in print. 
+
+  In the RGB model, colors start as black, and change as different levels of red, green, and blue are introduced.
+    In the rbg function, black is rgb(0, 0, 0); and white is rgb(255, 255, 255); 
+    Where the first number represents red, the second green, and the last number blue.
+    
+    Increasing the number makes the color more present. 0 means 0% of the that color is present. 
+    255 means 100% of that color is present. 
+
+  In the additive RGB color model, primary colors are colors that, when combined, create pure white. 
+    For this it happen, each color needs to be at its highest intensity. Theres only three primary colors
+    red, green, and blue.  
+
+  Secondary colors are the colors you get when you combine primary colors. (There are only three)
+    yellow      rgb(255, 255, 0);
+    cyan        rgb(0, 255, 255);
+    magenta     rbg(255, 0, 255);
+
+  Tertiary colors are created by combining a primary with a nearby secondary color. (Total of 6 tertiary colors)
+  orange                rgb(255, 127, 0); - red and yellow 
+  spring green          rgb(0, 255, 127); - cyan and green
+  violet                rgb(127, 0, 255); - magenta and blue 
+  chartreuse green      rgb(127, 255, 0); - green and yellow
+  azure                 rgb(0, 127, 255); - blue and cyan
+  rose(bright pink)     rgb(255, 0, 127); - red and magenta
+*/
+
+/*A color wheel is a circle where similar colors, or hues, are near each other, and different ones are futher apart. 
+    For example, pure red is between the hues rose and orange.
+
+  Two colors that are opposite from each other on the color wheel are called complementary colors.
+    If two complementary colors are combined, they produce gray. But when they are placed side by side, 
+    these colors produce strong visual contrast and appear brighter. 
+
+  Red and Cyan are complementary colors so they appear brighter next to each other. This contrast can be 
+    distracting if it's overused on a website, and can make text hard to read if it's placed on a 
+    complementary colored background. 
+
+  It's better practive to choose one color as the dominant color, and use its complementary color as an
+    accent to bring attention to certain content on the page. 
+*/
+
+/*A very common way to apply color to an element with CSS is with hexadecimal or hex values.
+    They are just another form of RGB values. 
+
+  Hex color values start with a # character and take six characters from 0-9 and A-F.
+    The first pair of characters represent red, the second pair represent green, 
+    and the third pair represent blue. 
+
+  Hexadecimal, or base 16 values, go from 0 - 9, then A - F:
+    0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E, F
+
+  With hex colors, 00 is 0% of that color, and FF is 100%. So #00FF00 is the same as rgb(0, 255, 0)
+*/
+
+/*The HSL color model, or hue, saturation, and lightness, is another way to represent colors.
+
+  The CSS hsl function accepts 3 values: a number from 0 to 360 for hue, a percentage from 
+    0 to 100 for saturation, and a percentage from 0 to 100 for lightness. 
+
+  If you imagine a color wheel, the hue red is at 0 degrees, green is at 120 degrees, and 
+    blue is at 240 degrees.
+
+  Saturation is the intensity of a color from 0%, or gray, to 100% for pure color. You must
+    add the percent sign % to the saturation and lightnes values.
+
+  Lightness is how bright a color appears, from 0%, or complete black, to 100%, complete 
+    white, with 50% being natural. 
+*/
+
+/*You can use a color transition, or gradient, on an element. linear-gradient();
+    A gradient is when one color transitions into another. The CSS 
+    linear-gradient function lets you control the direction of the transition along 
+    a line, and which colors are used.
+
+  One thing to remember is that the linear-gradient function actually creates an 
+    image element, and is usually paired with the background property which can 
+    accept an image as a value. 
+
+  The linear-gradient() function is very flexible. Here is the syntax:
+    linear-gradient(gradientDirection, color1, color2, ...);
+    It needs at least two colors arguments to work but can accept several color arguments. 
+
+  gradientDirection is the direction of the line used for the transition. color1 and color2
+    are color arguments, which are the colors that will be used in the transition itself. 
+    These can be any type of color, including color keywords, hex, rgb, and hsl. 
+
+  The gradientDirection takes a degree. Ex. 0deg, 90deg, 180deg, 270deg, 360deg
+
+  Color-stops allow you to fine-tune where colors are placed along the gradient line. 
+    They are a length unit like px or percentages that follow a color in the
+    linear-gradient function. 
+
+    linear-gradient(90deg, color 90%, anotherColor); //Here red takes up 90% of the space
+
+    When 180deg is used, the color-stops go from top to bottom. 50% is in the middle and 100% bottom. 
+    The Linear-gradient function automatically calculates these values for you, and 
+    places colors evenly along the gradient line by default. 
+*/
+
+/*Opacity describes how opaque, or non-transparent, something is. opacity: value; 
+
+  With is CSS property, you can control how opaque or transparent an element is. With the 
+    value 0, 0% percent of the element will be transparent, and at 1.0, 100% of the element
+    will be completly opaque like it is by default. 
+
+  Another way to set the opacity for an element is with the alpha channel. rgba(), hsla()
+    Similar to the opacity property, the alpha channel controls how transparent or opaque 
+    a color is. 
+
+    rgba(redValue, greenValue, blueValues, alphaValue); // 0-1.0
+
+
+*/
+
+/*The box-shadow property lets you apply one or more shadows around an element    box-shadow: offsetX offsetY color;
+    Both offsetX and offsetY accept number values in px and other CSS units
+    A positive offsetX value moves the shadow right and a negative value moves it left
+    a positive offsetY value moves the shadow down and a negative value moves it up 
+    If you want a value of zero (0) for any or both offsetX and offsetY, you don't needd to add a unit. 
+      Every browser understands that zero means no change. 
+
+  The height and width of the shadow is determined by the height and width of the element it's applied to.
+    You can also use an optional spreadRadius value to spread out the reach of the shadow.
+
+    box-shadow: offsetX offsetY spreadRadius color; // It default to 0 if not included 
+    
+  Notice that the edges of the shadow are rather sharp. 
+
+    box-shadow: offsetX offsetY blurRadius color;
+
+    If a blurRadius value isn't included, it defaults to 0 and produces sharp edges. The higher the value 
+    of blurRadius, the greater the blurring effect is. It uses px
+
+  box-shadow: offsetX offsetY blurRadius spreadRadius color;
+*/
+

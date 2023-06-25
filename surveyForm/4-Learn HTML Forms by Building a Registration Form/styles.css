@@ -26,7 +26,7 @@ fieldset {
     padding: 2rem 0;
     border-bottom: 3px solid #3b3b4f;
 }
-
+/*This selector targets the last element in the html file */
 fieldset:last-of-type {
     border-bottom: none;
 }
@@ -50,10 +50,12 @@ input, textarea {
 
 .inline {
     width: unset;
+    /*unset removes any width applied. In this case, it removed the width 100% applied to all input, textarea, select */
     margin: 0 0.5em 0 0;
     vertical-align: middle;
 }
-
+/*Attribute selector targets an element with a specified attribute value.
+p[class="jojo"] selects all p classes that have class="jojo" as an attribute. */
 input[type="submit"] {
     display: block;
     width: 60%;

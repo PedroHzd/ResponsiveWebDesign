@@ -1,0 +1,59 @@
+<!DOCTYPE html> 
+<html lang="en">
+    <head>
+        <title>Sign up</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <h1 id="title">TikTakToe plus</h1>
+        <p id="description">Complete the form to watch all the shows your heart desires</p>
+        <fieldset required>
+            <form id="survey-form">
+                <label id="name-label" class="lastone">
+                    Username<input id="name" type="text" placeholder="Enter your username" required>
+                </label>
+                <label id="email-label" class="lastone">
+                    Email<input id="email" type="email" placeholder="Provide an email address" required>
+                </label>
+                <label id="number-label" class="odd">
+                    How many shows have you seen?<input id="number" type="number" min="1" max="100" placeholder="How many shows do you want to watch" required>
+                </label>
+                <label>
+                    How long you will you be using the site?
+                    <select id="dropdown" required>
+                        <option>1 month</option>
+                        <option>3 months</option>
+                        <option>6 months</option>
+                        <option>Several years</option>
+                    </select>
+                </label>
+                <legend>What games do you like the most? This is to better understand your tastes.</legend>
+                <label>
+                    <input type="radio" value="royale" name="games">Fortnite
+                </label>
+                <label>
+                    <input type="radio" value="horror" name="games">Outlast
+                </label>
+                <label>
+                    <input type="radio" value="sandbox" name="games">Minecraft
+                </label>
+                <legend>What genre of shows do you like?</legend>
+                    <label><input type="checkbox" value="action">Action</label>
+                    <label><input type="checkbox" value="adventure">Adventure</label>
+                    <label><input type="checkbox" value="anime">Anime</label>
+                    <label><input type="checkbox" value="comedy">Comedy</label>
+                    <label><input type="checkbox" value="romance">Romance</label>
+                    <label><input type="checkbox" value="musical">Musical</label>
+                <label class="lastone">
+                    Optional<textarea rows="4" cols="50" placeholder="What type of shows would you like us to acquire"></textarea>
+                </label>
+
+                <input id="submit" type="submit" value="Submit" required>
+            </form>
+        </fieldset>
+    </body>
+</html>

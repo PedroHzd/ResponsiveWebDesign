@@ -1,0 +1,137 @@
+/*The CSS box-sizing property allows us to include the padding and border in an element's total width and height. 
+    Bt default, the width and height of an element is calculated like this:
+
+    width + padding + border = actual width of an element
+    height + padding + border = actual height of an element
+
+    This is a problem. When you set the width/height of an element, the element often appears bigger than specified. 
+    This is because the element's border and padding are not included to the element's width/height. Whenever, you add
+    padding or a border, the content width will increase. 
+
+    However, setting box-sizing: border-box; on an element, padding and border are included in the width and height. 
+    Therefore, specifying padding or borders doesn't incrase the width or heigth of the content. 
+
+    The code below ensures that all elements are sized in ths more intuitive way. Many developers want all elements
+    on their pages to work this way. 
+*/
+* {
+    box-sizing: border-box;
+}
+  
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f5f6f7;
+}
+  
+.header {
+    text-align: center;
+    text-transform: uppercase;
+    /*text-transform: capitalize, uppercase, lowercase; */
+    padding: 32px;
+    background-color: #0a0a23;
+    color: #fff;
+    border-bottom: 4px solid #fdb347;
+}
+  
+.gallery {
+    display: flex;
+    /*Flexbox is a one-dimensional CSS layout that can control the way items are spaced out and aligned within a container.
+        The element that has display: flex; becomes a flex container. Any direct children of a flex container 
+        become flex items. 
+    */
+
+    flex-direction: row;
+    /*Flexbox has a main and cross axis. The main axis is defined by the flex-direction property, which has four values.
+        flex-direction only works when applied to the container and not its children/flex items. 
+
+        row: (default): horizontal axis with flex items from left to right
+        row-reverse: horizontal axis with flex items from right to left
+        column: vertical axis with flex items from top to bottom
+        column-reverse: vertical axis with felx items from bottom to top 
+
+      The axes and directions will be different depending on the value. This will affect how other flex properties in 
+       flex items are applied. 
+    */
+
+    flex-wrap: wrap;
+    /*The flex-wrap property determines how your flex items behave when the flex container is too small. 
+        This CSS property only applies to flex container. Setting it to wrap will allow the items to 
+        wrap to the next row or column. nowrap (default) will prevent your items from wrapping and shrink
+        them if needed. 
+    */
+
+    justify-content: center;
+    /*The justify-content property determines how the items insider a flex container are positioned along the main axis, 
+        affecting their position and the space around them. Only applies to flex containers and it has different values. 
+
+        flex-start, flex-end, center, space-between, space-around, space-evenly
+    */
+
+    align-items: center;
+    /*The align-items property positions the flex content along the cross axis. In this case, with your flex-direction
+        set to row, your cross axis would be vertical. Again only applies to flex containers and these are the the values.
+
+        flex-start, flex-end, center, stretch, baseline
+    */
+
+    gap: 16px;
+    /*The gap CSS property sets the gap, also known as gutters, between rows and columns. The gap property 
+        and its row-gap and column-gap sub-properties provide this functionality for flex, grid, and multi-column
+        layout. You apply the property to the container element not its children.
+    */
+
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 20px 10px;
+}
+
+/* Selects all <img> elements that are descendants of an element with a class="gallery" */
+.gallery img {
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    /*Make sure width is set to auto or 100% to keep the images uniform. 
+        You can control the height to set how big the image gets. 
+    */
+
+    object-fit: cover;
+    /*Images have different aspect ratios. Rather than setting each aspect ratio individually, you can use
+        the object-fit property to determine how images should behave. 
+
+      The CSS object-fit property is used to specify how an <img> or <video> should be resized to fit its container. 
+        This property tells the content to fill the container in a variety of ways; such as "preserve that aspect 
+        ratio" or "stretch up and take up as much space as possible". 
+
+      The object-fit property can take one of the following values:
+        fill - This is default. The image is resized to fill the given dimension. If necessary, the image will be 
+        stretched or squished to fit
+
+        contain - The image keep its aspect ratio, but is resized to fit within the given dimension.
+
+        cover - The image keeps its aspect ratio and fills the given dimension. The image will be clipped to fit
+
+        none - The image is not resized 
+
+        scale-down - the image is scaled down to the smallest version of none or contain.
+    */
+    border-radius: 10px;
+    /*Use to round the corners of borders in this case for images*/
+}
+  
+.gallery::after {
+    content: "";
+    /*The content property is used with the ::before and ::after pseudo-element, to insert generated content. 
+        Here we add an empty string in order to move the last picture to the left instead of in the center.
+        Make sure to add the same width as the pictures.
+    */
+    width: 350px;
+}
+
+/*The ::after pseudo-element creates an element that is the last child of the selected element. You can use it to add
+    an empty element after the last image. It's usually used with the css property content. 
+  
+  The selector inserts something after the content of each selected element. You can also use the ::before 
+    selector to insert something before the content.   
+
+*/

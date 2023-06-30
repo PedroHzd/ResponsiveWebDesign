@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <!--<meta> is used to specify information about the page, like title, description, keywords, and author-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--viewport definition tells the browser how to render the page. Including one betters visual
+            accessibility on mobile, and improves SEO (search engine optimization). -->
+        <meta name="description" content="freeCodeCamp Accessibility Quiz practice project">
+        <!--Another important meta element for accessibility and SEO is the description definition.
+            The value of the content attribute is used by search engines to provide a description
+            of your page.-->
+        <title>Accessibility Quiz</title>
+        <!--The title element is useful for screen readers to understand the content of a page. It is an
+            important part of SEO.-->
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <header>
+            <img id="logo" src="https://cdn.freecodecamp.org/platform/universal/fcc_primary.svg"
+            alt="Logo of the website that says free code camp">
+            <h1>HTML/CSS Quiz</h1>
+            <nav>
+                <ul>
+                    <li><a href="#student-info" accesskey="a">INFO</a></li>
+                    <li><a href="#html-questions" accesskey="s">HTML</a></li>
+                    <li><a href="#css-questions" accesskey="d">CSS</a></li>
+                    <!--To be able to navigate within the page, give each anchor element a href. The href attribute
+                        specifies the URL of the page the link goes to. If the href attribute is not present, the
+                        <a> tag will not be a hyperlink. 
+                            
+                        You can use href="#top" or href="#" to link to the top of the current page.
+                        Values of href can include
+                        absolute URL (points to another website) https://www.w3schools.com/tags/att_a_href.asp
+                        relative URL (points to a file within a web site) href="catPhoto.jpg" 
+                        Link to an element with a specified id within a page    href="#footer"
+                        Other protocols (https://, ftp://, mailto:, file:)
+                        A script    href="javascript:alert('hello');"
+                    -->
+                </ul>
+            </nav>
+        </header>
+        <!--Navigation is a core part of accessibility, and screen readers rely on you to provide the structure
+            of your page. This is accomplished with semantic HTML elements. The <header></header> element
+            will be used to introduce the page, as well as provide a nagivation menu. The <main></main>
+            element will contain the core content of your page.-->
+        <main>
+            <form method="post" action="https://freecodecamp.org/practice-project/accessibility-quiz">
+                <section role="region" aria-labelledby="student-info">
+                <!--To increase the page accessibility, the role attribute can be used to indicate the purpose
+                    behind an element on the page to assistive technologies. The role attribute is a part of
+                    the Web Accessibility Initiative (WAI), and accepts preset values
+                
+                    Every region role requires a label, which helps screen reader users understand the purpose
+                    of the region. One method for adding a label is to add a heading element inside the region
+                    and then reference it with the aria-labelledby attribute.
+
+                    https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA -->
+                    <h2 id="student-info">Student Info</h2>
+                    <div class="info">
+                        <label for="student-name">Name:</label>
+                        <input type="text" name="student-name" id="student-name">
+                        <!--It is important to link each input to the corresponding label element. This provides
+                            assistive technology users with a visual reference to the input. This is done by
+                            giving the label a for attribut, which contain the id of the input.-->
+                        <!--Adding a placeholder to the input element is not a best-practice for accessibility.
+                            Too aften, users confuse the placeholder text with and actual input value - they
+                            think there is already a value in the input.-->
+                    </div>
+                    <div class="info">
+                        <label for="student-email">Email:</label>
+                        <input type="email" name="student-email" id="student-email">
+                    </div>
+                    <div class="info">
+                        <label for="birth-date">D.O.B.<span class="sr-only">(Date of Birth)</span></label>
+                        <!--Arguable, D.O.B is not descriptive enough. This is especially true for visually 
+                            impaired users. One way to get around such an issue, without having to add visible
+                            text to the label, is to add text only a screen reader can read. We can do this by 
+                            adding text inside a span element and cover it with CSS so D.O.B is the only text visible.-->
+                        <input type="date" name="birth-date" id="birth-date">
+                    </div>
+                </section>
+                <!--You can semantically separate the content within the form using section elements-->
+                <section role="region" aria-labelledby="html-questions">
+                    <h2 id="html-questions">HTML</h2>
+                    <div class="question-block">
+                        <p>1</p>
+                        <fieldset class="question" name="html-question-one">
+                            <legend>
+                                The legend element represents a caption for the content of its
+                                parent fieldset element
+                            </legend>
+                            <ul class="answers-list">
+                                <li>
+                                    <label for="q1-a1">
+                                        <input type="radio" id="q1-a1" name="q1" value="true"> True
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="q1-a2">
+                                        <input type="radio" id="q1-a2" name="q1" value="false"> False
+                                    </label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+
+                    <div class="question-block">
+                        <p>2</p>
+                        <fieldset class="question" name="html-question-two">
+                            <legend>
+                                A label element nesting an input element is required to have a
+                                for attribute with the same value as the input's id
+                            </legend>
+                            <ul class="answers-list">
+                                <li>
+                                    <label for="q2-a1">
+                                        <input type="radio" id="q2-a1" name="q2" value="true"> True
+                                    </label>
+                                </li>
+                                <li>
+                                    <label for="q2-a2">
+                                        <input type="radio" id="q2-a2" name="q2" value="false"> False
+                                    </label>
+                                </li>
+                            </ul>
+                        </fieldset>
+                    </div>
+                </section>
+
+                <section role="region" aria-labelledby="css-questions">
+                    <h2 id="css-questions">CSS</h2>
+                    <div class="formrow">
+                        <div class="question-block">
+                            <label for="customer">Are you a frontend developer?</label>
+                        </div>
+                        <div class="answer">
+                            <select name="customer" id="customer" required>
+                                <option value="">Select an option</option>
+                                <option value="yes">Yes</option>
+                                <option value="no">No</option>
+                            </select>
+                        </div>
+                        <div class="question-block">
+                            <label for="css-questions">Do you have any questions:</label>
+                        </div>
+                        <div class="answer">
+                            <textarea id="css-questions" name="css-questions" rows="5" cols="24" placeholder="Who is flexbox...">    
+                            </textarea>
+                        </div>
+                    </div>
+                </section>
+                <button type="submit">Send</button>
+            </form>
+        </main>
+        <footer>
+            <address>
+                <a href="https://freecodecamp.org">freeCodeCamp</a><br>
+                San Francisco<br>
+                California<br>
+                USA
+            </address>
+        </footer>
+    </body>
+</html>

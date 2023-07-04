@@ -39,6 +39,12 @@
                         Other protocols (https://, ftp://, mailto:, file:)
                         A script    href="javascript:alert('hello');"
                     -->
+                    <!--accesskey="" are keyboard shortcuts. This attribute accepts a space-raparated list of access
+                        keys. NOTE: It is not always advised to use access keys, but they can be useful. 
+
+                        https://www.w3schools.com/tags/att_global_accesskey.asp
+                        According to w3schools, it is advised not to use accesskeys
+                    -->
                 </ul>
             </nav>
         </header>
@@ -75,7 +81,7 @@
                     </div>
                     <div class="info">
                         <label for="birth-date">D.O.B.<span class="sr-only">(Date of Birth)</span></label>
-                        <!--Arguable, D.O.B is not descriptive enough. This is especially true for visually 
+                        <!--Arguably, D.O.B is not descriptive enough. This is especially true for visually 
                             impaired users. One way to get around such an issue, without having to add visible
                             text to the label, is to add text only a screen reader can read. We can do this by 
                             adding text inside a span element and cover it with CSS so D.O.B is the only text visible.-->
@@ -104,6 +110,7 @@
                                     </label>
                                 </li>
                             </ul>
+                            <!--With a label element with a nested input needs to be link with for and id attributes-->
                         </fieldset>
                     </div>
 
@@ -155,13 +162,21 @@
                 <button type="submit">Send</button>
             </form>
         </main>
+
         <footer>
+        <!--The footer element is a container for a collection of content that is related to the page,
+            and the address element is a container for contact information for the author of the page.
+            The address element does not have to contain a physical geographical location. It can be
+            used to provide a link to the subject.
+        -->
             <address>
                 <a href="https://freecodecamp.org">freeCodeCamp</a><br>
                 San Francisco<br>
                 California<br>
                 USA
             </address>
+            <!--The <br> tags will allow each part of the address to be on its own line
+                and are useful for presenting address elements properly.-->
         </footer>
     </body>
 </html>

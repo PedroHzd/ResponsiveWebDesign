@@ -1,7 +1,26 @@
+/*Certain types of motion-based animations can cause discomfort for some users. In particular, people with vestibular 
+  disorders have sensitivity to certain motion triggers. 
+
+  The @media at-rule has a media feature called prefers-reduced-motion to set CSS based on the user's preferences.
+  It can take one of the following values: reduce, no-preference.
+
+  @media (feature: value) {
+    selector {
+      css styles
+    }
+  }
+*/
+
 @media (prefers-reduced-motion: no-preference) {
   * {
     scroll-behavior: smooth;
+    /*The scroll-behavior property specifies whether to smoothly animate the scroll position,
+      instead of a straight jump, when the user clicks on a link within a scrollable box.
+      
+      https://www.w3schools.com/cssref/pr_scroll-behavior.php
+    */
   }
+  /*Universal selector (*) selects all HTML elements on the page https://www.w3schools.com/CSS/css_selectors.asp*/
 }
 
 body {
@@ -18,8 +37,16 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: fixed; /*https://www.w3schools.com/Css/css_positioning.asp*/
   top: 0;
+  /*The top property affects the vertical position of a positioned element. This property has no effect on
+    non-positioned elements.
+
+    If position: absolute; or position: fixed; - The top property sets the top edge of an elemnet to a unit
+    above/below the top edge of tis nearest positionted ancestor.
+
+    https://www.w3schools.com/cssref/pr_pos_top.php
+  */
 }
 
 #logo {
@@ -78,10 +105,24 @@ nav > ul {
   flex-wrap: wrap;
   align-items: center;
   padding-inline-start: 0;
+  /*An element's padding-inline-start is the space from its border to its content, at the start in the inline direrection
+    https://www.w3schools.com/CSSref/css_pr_padding-inline-start.php --
+
+    padding-inline both left and right
+    padding-inline-start === left and padding-inline-end === right
+
+    padding-block both top and bottom
+    padding-block-start === top and padding-block-end === bottom
+
+    padding-inline and padding-block are dependent on inline and block directions.
+  */
   margin-block: 0;
+  /*https://www.w3schools.com/CSSref/css_pr_margin-block.php similar to padding-inline or padding-block 
+    but it changes the margins instead of padding
+  */
   height: 100%;
 }
-
+/*The child selector can be chained to target a specific element*/
 nav > ul > li {
   color: #dfdfe2;
   margin: 0 0.2rem;
@@ -93,11 +134,19 @@ nav > ul > li:hover {
   background-color: #dfdfe2;
   color: #1b1b32;
   cursor: pointer;
+  /*Links can be styled differently depending on what state they are in. The four link state are:
+    a:link - a normal, unvisited link
+    a:visited - a link the user has visited
+    a:hover - a link when the user mouses over it
+    a:active - a link the moment it is clicked
+    
+    https://www.w3schools.com/Css/css_link.asp for more examples and css properties  
+  */
 }
 
 li > a {
   color: inherit;
-  text-decoration: none;
+  text-decoration: none; /*To remove the underline*/
 }
 
 main {
@@ -167,6 +216,15 @@ p {
 
 p::before {
   content: "Question #";
+  /*The ::before pseudo-element can be used to insert some content before the content
+    of an element. 
+
+    The <p> element now displays Question #1
+    
+    The content property is used with the ::before and ::after pseudo-element, to insert
+    generated content.
+  
+  */
 }
 
 .question {
@@ -176,6 +234,7 @@ p::before {
 
 .answers-list {
   list-style: none;
+  /*https://www.w3schools.com/CSS/css_list.asp reference to style <li> <ol> <ul> elements*/
   padding: 0;
 }
 
@@ -215,16 +274,16 @@ address {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
-  /*This is a common patter to visually hide text for only screen readers to read.
+  /*-position: This is a common patter to visually hide text for only screen readers to read.
 
     -position: property specifies the type of positioning method used for an element.
     It has different values static(default), relative, absolute, fixed, sticky.
     
     absolute; The element is positioned relative to its first positioned (not static) ancestor element.
 
-    https://www.w3schools.com/cssref/pr_class_position.php for a demo
+    https://www.w3schools.com/Css/css_positioning.asp for a demo */
 
-    -overflow: property specifies what should happen if content overflows an element's box.
+  /*-overflow: property specifies what should happen if content overflows an element's box.
     This property specifies whether to clip content or to add scrollbars when an element's 
     content is too big to fit in a specified area. 
     !! The overflow property only works for block elements with a specified height.
@@ -232,22 +291,21 @@ address {
     hidden; The overflow is clipped, and the rest of the content will be invisible. Content can be
     scrolled programmatically. 
 
-    https://www.w3schools.com/cssref/pr_pos_overflow.php more information on other values
+    https://www.w3schools.com/Css/css_overflow.asp more information on other values*/
 
-    -clip: property lets you specify a rectangle to clip an absolutely positioned element. The
+  /*-clip: property lets you specify a rectangle to clip an absolutely positioned element. The
     rectangle is specified as four cordinates, all from the top-left corner of the element to be
     clip.
     !!The clip property does not work if "overflow: visible;"
     !!This is property is deprecated and will be replaced by clip-path in the future.
 
     https://www.w3schools.com/cssref/pr_pos_clip.php
-    https://www.w3schools.com/cssref/css3_pr_clip-path.php 
+    https://www.w3schools.com/cssref/css3_pr_clip-path.php */
 
-    -white-space: property specifies how white-space insider an element is handled.
+  /*-white-space: property specifies how white-space insider an element is handled.
 
     nowrap: Sequences of whitespace will collapse into a single whitespace. Text will never wrap
     to the next line. The text continues on the same line until <br> is encountered. 
 
-    https://www.w3schools.com/cssref/pr_text_white-space.php  more information on different value.
-  */
+    https://www.w3schools.com/cssref/pr_text_white-space.php  more information on different value.*/
 }
